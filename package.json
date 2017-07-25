@@ -1,12 +1,12 @@
 {
   "name": "simple-lastfm",
   "description": "simple last.fm api for node.js",
-  "version": "1.0.5",
+  "version": "1.1.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/atomjack/simple-lastfm.git"
+    "url": "git://github.com/FranciscoG/simple-lastfm.git"
   },
-  "author": "Chris Bellew <atomjack@gmail.com>",
+  "author": "FranciscoG & Chris Bellew <atomjack@gmail.com>",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib"
@@ -16,10 +16,7 @@
   },
   "dependencies" : {
     "crypto": ">= 0.0.3",
-    "xml2js": ">= 0.1.13",
-    "querystring": ">= 0.1.0",
-    "jquery": "*",
-    "jsdom": "*"
+    "xml2js": ">= 0.1.13"
   },
   "devDependencies": {},
   "optionalDependencies": {}
