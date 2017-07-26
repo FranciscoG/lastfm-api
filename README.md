@@ -1,28 +1,27 @@
 # lastfm-api
 
-a fork and re-write of [simple-lastfm](https://github.com/atomjack/simple-lastfm)
-
 A simple nodejs library to interface with the last.fm API
 
 ## Installation
-    npm install simple-lastfm
+not available via npm yet.  Still in development.
 
 ## Examples
 
-First, you'll need to get an API key from last.fm: [http://www.last.fm/api/account](http://www.last.fm/api/account).
+First, you'll need to get an API key from last.fm: http://www.last.fm/api/account.
 
 Once you have your API key and API secret, you'll need to generate a session key, after which you can then start to scrobble:
 
 ```js
-var Lastfm = require('simple-lastfm');
+var Lastfm = require('lastfm-api');
 
-var lastfm = new Lastfm({
+var lastfm = new LastfmApi({
 	api_key: 'xxx',
 	api_secret: 'xxx',
 	username: 'xxx',
 	password: 'xxx',
 	authToken: 'xxx' // Optional, you can use this instead of password, where authToken = md5(username + md5(password))
 });
+
 
 lastfm.getSessionKey(function(result) {
 	console.log("session key = " + result.session_key);
@@ -60,6 +59,42 @@ lastfm.getSessionKey(function(result) {
 	}
 });
 ```
+## Documentation
+
+### doScrobble(method, opts, callback)
+Sends a POST request to the LastFM Api to handle one of the following availale API Methods:
+
+**method** {string} - **required** - one of the track.* methods    
+[track.scrobble](http://www.last.fm/api/show/track.scrobble)    
+[track.love](http://www.last.fm/api/show/track.love)    
+[track.unlove](http://www.last.fm/api/show/track.unlove)    
+[track.updateNowPlaying](http://www.last.fm/api/show/track.updateNowPlaying)    
+[track.addTags](http://www.last.fm/api/show/track.addTags)    
+
+**opts** {Object} - **required** - an object with the following properties:    
+* opts.track  {string} - **required**    
+* opts.artist {string} - **required**    
+* opts.tags {string} - only required when using the `track.addTags` methodm otherwise you can completely omit it    
+* opts.timestamp {string} - The timestamp for this scrobble. If omitted, uses the current date/time. Use number of seconds (NOT milliseconds!) since the UNIX epoch.
+
+**callback** {function} 
+
+
+**example**
+```javascript
+var lastfm = new LastfmApi(config);
+
+lastfm.doScrobble('track.love', opts, function(err, result){
+  if (err) {
+    // handle error
+  }
+
+  doSomething(result);
+});
+
+```
+
+---------------
 
 #Documentation
 
@@ -106,37 +141,6 @@ Require parameters:
 * `artist`
 * `track`
 * `tags`: A comma delimited list of user supplied tags to apply to this track. Accepts a maximum of 10 tags.
-
-Optional parameters:
-
-* `callback`: A function which receives a single object, of the form { success: true|false[, error: 'text description of the error']}.
-
-### scrobbleTrack ( options )
-Required parameters:
-
-* `artist`
-* `track`
-
-Optional parameters:
-
-* `callback`: A function which receives a single object, of the form { success: true|false[, error: 'text description of the error']}.
-* `timestamp`: The timestamp for this scrobble. If omitted, uses the current date/time. Use number of seconds (NOT milliseconds!) since the UNIX epoch.
-
-### loveTrack (options)
-Required parameters:
-
-* `artist`
-* `track`
-
-Optional parameters:
-
-* `callback`: A function which receives a single object, of the form { success: true|false[, error: 'text description of the error']}.
-
-### unloveTrack (options)
-Required parameters:
-
-* `artist`
-* `track`
 
 Optional parameters:
 

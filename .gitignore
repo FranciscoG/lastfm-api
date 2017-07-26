@@ -2,3 +2,6 @@
 Thumbs.db
 
 node_modules
+
+# contains private creds
+tests/config.js
