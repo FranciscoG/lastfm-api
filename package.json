@@ -1,18 +1,18 @@
 {
-  "name": "simple-lastfm",
-  "description": "simple last.fm api for node.js",
-  "version": "1.1.0",
+  "name": "lastfm-api",
+  "description": "NodeJS wrapper for last.fm's api",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/FranciscoG/simple-lastfm.git"
+    "url": "git@github.com:FranciscoG/lastfm-api.git"
   },
-  "author": "FranciscoG & Chris Bellew <atomjack@gmail.com>",
+  "author": "FranciscoG <info@franciscog.com>",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib"
   },
   "engines": {
-    "node": "*"
+    "node": ">= 4.8.4"
   },
   "dependencies" : {
     "crypto": ">= 0.0.3",

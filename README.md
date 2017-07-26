@@ -1,4 +1,6 @@
-#Simple-Lastfm
+# lastfm-api
+
+a fork and re-write of [simple-lastfm](https://github.com/atomjack/simple-lastfm)
 
 A simple nodejs library to interface with the last.fm API
 
