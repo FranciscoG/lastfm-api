@@ -205,3 +205,6 @@ Optional parameters:
 * `track`: The name of the track. If ommitted, method will return number of artist plays.
 * `callback`: A function which receives a single object, of the form { success: true|false[, plays: #, error: 'text description of the error']}.
 
+## Developing
+
+You can add additional methods by placing files in the `/lib/action` folder.  Every file placed in there will be added as a method of the maiin `LastFmApi` class in `lib/index.js`.  It's `this` will be bound to that class.  The method name will be the same as the filename.

@@ -12,7 +12,7 @@
     "lib": "lib"
   },
   "engines": {
-    "node": ">= 4.8.4"
+    "node": ">= 4.0.0"
   },
   "dependencies" : {
     "crypto": ">= 0.0.3",
