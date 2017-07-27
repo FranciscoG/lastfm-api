@@ -8,12 +8,15 @@ var lastfm = new LastFMApi(config);
 
 describe('Get Session Key', function(){
 
-   it('Successfuly get a session key', function(done){    
-    lastfm.getSessionKey(function(err, sessionKey){
-      if (err) return done(err);
-      expect(sessionKey).to.be.a('string');
-      done();
-    });
+   it('Successfuly get a session key', function(done){
+    lastfm.getSessionKey()
+      .then(function(sessionKey){
+        expect(sessionKey).to.be.a('string');
+        done();
+      })
+      .catch(function(err){
+        return done(err);
+      })
 
   });
 
