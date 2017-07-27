@@ -18,8 +18,8 @@
   },
 
   "scripts": {
-    "test": "mocha",
-    "watch": "mocha -w"
+    "test": "mocha --delay",
+    "watch": "mocha -w --delay"
   },
 
   "dependencies": {

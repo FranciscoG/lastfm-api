@@ -7,7 +7,7 @@ const config = require('./config.js');
 var lastfm = new LastFMApi(config);
 
 describe('Get Session Key', function(){
-
+  
    it('Successfuly get a session key', function(done){
     lastfm.getSessionKey()
       .then(function(sessionKey){
@@ -22,3 +22,4 @@ describe('Get Session Key', function(){
 
 });
 
+run();
