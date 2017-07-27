@@ -6,7 +6,7 @@ const config = require('./config.js');
 
 describe('Class instantiation: ', function(){
   
-  it('Successfuly instantiate class', function(done){
+  it('Successfuly create instance of class', function(done){
     expect(function(){ new LastFMApi(config) }).to.not.throw();
     done();
   });
@@ -22,7 +22,7 @@ describe('Class instantiation: ', function(){
     done();
   });
 
-  it('Fail instantiation without any options', function(done){
+  it('Fail without any options', function(done){
     expect(function(){ new LastFMApi() }).to.throw("missing config");
     done();
   });

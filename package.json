@@ -6,28 +6,28 @@
     "type": "git",
     "url": "git@github.com:FranciscoG/lastfm-api.git"
   },
-  
   "author": "FranciscoG <info@franciscog.com>",
   "main": "lib/index.js",
   "directories": {
     "lib": "lib"
   },
-
   "engines": {
     "node": ">= 4.0.0"
   },
-
   "scripts": {
     "test": "mocha --delay",
-    "watch": "mocha -w --delay"
+    "watch": "mocha -w --delay",
+    "doc": "jsdoc lib -r -d ./docs -t ./node_modules/docdash"
   },
-
   "dependencies": {
     "crypto": ">= 0.0.3",
     "superagent": "^3.5.2"
   },
   "devDependencies": {
     "chai": "^4.1.0",
+    "docdash": "^0.4.0",
+    "jsdoc": "^3.5.3",
+    "jsdoc-to-markdown": "^3.0.0",
     "mocha": "^3.4.2"
   },
   "optionalDependencies": {}

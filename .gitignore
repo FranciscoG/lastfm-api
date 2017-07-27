@@ -5,3 +5,7 @@ node_modules
 
 # contains private creds
 test/config.js
+
+# still testing out which jsdoc template I like
+# I would prefer a markdown but jsdoc2md didn't work for me
+docs
