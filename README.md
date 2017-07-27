@@ -5,7 +5,7 @@ A simple NodeJS library that handles the authentication of Last.fm api requests 
 ## Installation
 not available via npm yet.  Still in development.
 
-## Examples
+## API Key
 
 First, you'll need to get an API key from last.fm: http://www.last.fm/api/account.
 
@@ -31,9 +31,6 @@ var lastfm = new LastfmApi({
 
 **sessionKey** - if you've already stored a session key for the user then you can re-use it since they have an unlimited lifetime (they can be revoked though)
 
-
-There are only 3 methods available
-
 ### getSessionKey
 
 ```js
@@ -48,8 +45,10 @@ lastfm.getSessionKey()
   })
 ```
 
-:warning:    
-For the following get & post actions, if the [api documentaton](https://www.last.fm/api) lists any of these parameters you can ignore them, this library will handle that for you:    
+--------
+
+:warning: :warning: :warning:    
+For the following `get()` & `post()` actions below, you can ignore any of the following parameters from the [api documentaton](https://www.last.fm/api)  because this library will handle that for you:    
 * `api_key`
 * `api_sig`
 * `sk`
@@ -65,11 +64,12 @@ Handles creating and sending a GET request to the API.  Read the [api documentat
 
 **returns** a promise
 
+**example**
 ```js
 var trackInfo = {
   track : 'Roygbiv',
   artist : 'Boards of Canada',
-	autocorrect: 1  // optional
+  autocorrect: 1  // optional
 };
 
 // lastfm is an instance of LastfmApi, see example above
@@ -91,8 +91,9 @@ Handles creating and sending a POST request to the API.  Read the [api documenta
 **opts** - the non-Auth related parameters required for your specific lastFM post request method.  for example, [track.love](https://www.last.fm/api/show/track.love) only requires artist and track name.
 
 
-returns a promise
+**returns** a promise
 
+**example**
 ```js
 var trackInfo = {
   track : 'Roygbiv',

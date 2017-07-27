@@ -37,5 +37,22 @@ describe('Handle GET requests: ', function(){
 
   });
 
+  it('user.getTopTracks', function(done){
+
+    var userInfo = {
+      user : config.username
+    };
+
+    lastfm.get('user.getTopTracks', userInfo)
+      .then(function(res){
+        expect(res.toptracks.track).to.be.a('array');
+        done();
+      })
+      .catch(function(err){
+        return done(err);
+      })
+
+  });
+
 });
 
