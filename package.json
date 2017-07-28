@@ -1,7 +1,7 @@
 {
   "name": "lastfm-api",
   "description": "NodeJS wrapper for last.fm's api",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "repository": {
     "type": "git",
     "url": "git@github.com:FranciscoG/lastfm-api.git"
@@ -27,7 +27,6 @@
     "chai": "^4.1.0",
     "docdash": "^0.4.0",
     "jsdoc": "^3.5.3",
-    "jsdoc-to-markdown": "^3.0.0",
     "mocha": "^3.4.2"
   },
   "optionalDependencies": {}
