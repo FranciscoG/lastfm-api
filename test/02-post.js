@@ -13,7 +13,7 @@ lastfm.getSessionKey()
     run();
   })
   .catch(function(err){
-    done(err);
+    console.log(err);
     run();
   })
 
@@ -37,12 +37,30 @@ describe('Handle authenticaed POST requests: ', function(){
 
   });
 
+  it('track.unlove', function(done){
+
+    var trackInfo = {
+      track : 'Roygbiv',
+      artist : 'Boards of Canada'
+    };
+
+    lastfm.post('track.unlove', trackInfo)
+      .then(function(res){
+        expect(res).to.deep.equal({});
+        done();
+      })
+      .catch(function(err){
+        return done(err);
+      })
+
+  });
+
   it('track.scrobble', function(done){
     var trackInfo = {
       track : 'Roygbiv',
       artist : 'Boards of Canada',
       timestamp : utils.timestamp(),
-      album : "Music has the right to Children"
+      album : 'Music has the right to Children'
     };
 
     lastfm.post('track.scrobble', trackInfo)
@@ -55,5 +73,62 @@ describe('Handle authenticaed POST requests: ', function(){
         return done(err);
       })
   })
+
+  it('track.addTags', function(done){
+
+    var trackInfo = {
+      track : 'Roygbiv',
+      artist : 'Boards of Canada',
+      tags : 'banana'
+    };
+
+    lastfm.post('track.addTags', trackInfo)
+      .then(function(res){
+        expect(res).to.deep.equal({});
+        done();
+      })
+      .catch(function(err){
+        return done(err);
+      })
+
+  });
+
+  it('track.removeTag', function(done){
+
+    var trackInfo = {
+      track : 'Roygbiv',
+      artist : 'Boards of Canada',
+      tag : 'banana'
+    };
+
+    lastfm.post('track.removeTag', trackInfo)
+      .then(function(res){
+        expect(res).to.deep.equal({});
+        done();
+      })
+      .catch(function(err){
+        return done(err);
+      })
+
+  });
+
+  it('track.updateNowPlaying', function(done){
+
+    var trackInfo = {
+      track : 'Roygbiv',
+      artist : 'Boards of Canada'
+    };
+
+    lastfm.post('track.updateNowPlaying', trackInfo)
+      .then(function(res){
+        expect(res.nowplaying).to.be.a('object');
+        expect(res.nowplaying.track['#text']).to.equal('Roygbiv');
+        done();
+      })
+      .catch(function(err){
+        return done(err);
+      })
+
+  });
 
 });

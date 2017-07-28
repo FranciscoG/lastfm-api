@@ -12,7 +12,7 @@ lastfm.getSessionKey()
     run();
   })
   .catch(function(err){
-    done(err);
+    console.log(err);
     run();
   })
 

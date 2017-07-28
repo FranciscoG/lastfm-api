@@ -1,16 +1,26 @@
 {
   "name": "lastfm-api",
-  "description": "NodeJS wrapper for last.fm's api",
+  "description": "Node wrapper for Last.fm's API, for both public and private data",
   "version": "0.1.0",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git@github.com:FranciscoG/lastfm-api.git"
   },
   "author": "FranciscoG <info@franciscog.com>",
+  "keywords": [
+    "last.fm",
+    "lastfm",
+    "last.fm api",
+    "lastfm api"
+  ],
   "main": "lib/index.js",
   "directories": {
     "lib": "lib"
   },
+  "files": [
+    "lib/"
+  ],
   "engines": {
     "node": ">= 4.0.0"
   },

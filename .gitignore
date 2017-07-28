@@ -2,6 +2,7 @@
 Thumbs.db
 
 node_modules
+*.log 
 
 # contains private creds
 test/config.js

@@ -1,0 +1,20 @@
+{
+  "env": {
+    "browser": false,
+    "node" : true,
+    "es6": true,
+    "commonjs" : true,
+    "mocha" : true
+  },
+  "rules" : {
+    "eqeqeq" : "warn",
+    "no-undefined" : "error",
+    "no-use-before-define" : "warn",
+    "new-cap" : "warn",
+    "quotes" : ["warn", "single"],
+    "no-undef" : "error",
+    "no-unused-vars" : "warn",
+    "no-eq-null" : "off",
+    "curly" : "warn"
+  }
+}
