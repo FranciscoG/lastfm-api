@@ -32,7 +32,7 @@ describe('Handle GET requests: ', function(){
         done();
       })
       .catch(function(err){
-        return done(err);
+        done(err);
       })
 
   });
@@ -49,7 +49,73 @@ describe('Handle GET requests: ', function(){
         done();
       })
       .catch(function(err){
-        return done(err);
+        done(err);
+      })
+
+  });
+
+  it('user.getInfo - self', function(done){
+
+    lastfm.get('user.getInfo')
+      .then(function(res){
+        expect(res.user.name).to.equal(config.username);
+        expect(res.user.image).to.be.a('array');
+        done();
+      })
+      .catch(function(err){
+        done(err);
+      })
+
+  });
+
+  it('user.getInfo - another user\'s info', function(done){
+
+    var userInfo = {
+      user : 'ChilloutMixer'
+    };
+
+    lastfm.get('user.getInfo', userInfo)
+      .then(function(res){
+        expect(res.user.name).to.equal('ChilloutMixer');
+        expect(res.user.image).to.be.a('array');
+        done();
+      })
+      .catch(function(err){
+        done(err);
+      })
+
+  });
+
+  it('user.getTopArtists', function(done){
+
+    var userInfo = {
+      user : 'ChilloutMixer'
+    };
+
+    lastfm.get('user.getTopArtists', userInfo)
+      .then(function(res){
+        expect(res.topartists.artist).to.be.a('array');
+        done();
+      })
+      .catch(function(err){
+        done(err);
+      })
+
+  });
+
+  it('library.getArtists', function(done){
+
+    var userInfo = {
+      user : 'ChilloutMixer'
+    };
+
+    lastfm.get('library.getArtists', userInfo)
+      .then(function(res){
+        expect(res.artists.artist).to.be.a('array');
+        done();
+      })
+      .catch(function(err){
+        done(err);
       })
 
   });
