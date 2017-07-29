@@ -120,5 +120,18 @@ describe('Handle GET requests: ', function(){
 
   });
 
+   it('fail a get request because missing required paramters', function(done){
+
+    lastfm.get('track.getTopTags', {})
+      .then(function(res){
+        done();
+      })
+      .catch(function(err){
+        expect(err.response.res.statusMessage).to.equal('artist param missing');
+        done();
+      })
+
+  });
+
 });
 

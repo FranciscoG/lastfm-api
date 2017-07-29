@@ -1,6 +1,8 @@
 # lastfm-api
 
-A simple NodeJS library that handles the authentication of Last.fm api requests and uses Promises.
+A simple NodeJS library that handles the authentication of Last.fm api requests and uses Promises.  
+
+Other lastfm api libraries create methods to wrap each individual api endpoint so that it can pre-format the response for you, this library won't do that.  It solely handles setting up the hashed, and authenticated (when required), signatures, and making the post/get requests. It returns the response body as is.
 
 ## Installation
 not available via npm yet.  Still in development.

@@ -5,5 +5,5 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ## [Unreleased]
 ### Added
-- working on the initial release of the libray which is a complete rewrite of the fork.
+- working on the initial release of the libray which is a complete rewrite of the original fork.
 - adding and refining documentation
