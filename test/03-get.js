@@ -54,8 +54,9 @@ describe('Handle GET requests: ', function(){
 
   });
 
-  it('user.getInfo - self', function(done){
-
+  it('user.getInfo - self using session key', function(done){
+    // session is already stored and added to every get request
+    
     lastfm.get('user.getInfo')
       .then(function(res){
         expect(res.user.name).to.equal(config.username);
