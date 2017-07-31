@@ -1,6 +1,5 @@
 const chai = require('chai');
 const expect = chai.expect;
-const should = chai.should;
 const LastFMApi = require('../lib');
 const config = require('./config.js');
 const utils = require('../lib/utils');
@@ -32,7 +31,7 @@ describe('Handle authenticaed POST requests: ', function(){
         done();
       })
       .catch(function(err){
-        return done(err);
+        done(err);
       })
 
   });
@@ -50,7 +49,7 @@ describe('Handle authenticaed POST requests: ', function(){
         done();
       })
       .catch(function(err){
-        return done(err);
+        done(err);
       })
 
   });
@@ -70,7 +69,7 @@ describe('Handle authenticaed POST requests: ', function(){
         done();
       })
       .catch(function(err){
-        return done(err);
+        done(err);
       })
   })
 
@@ -88,7 +87,7 @@ describe('Handle authenticaed POST requests: ', function(){
         done();
       })
       .catch(function(err){
-        return done(err);
+        done(err);
       })
 
   });
@@ -107,7 +106,7 @@ describe('Handle authenticaed POST requests: ', function(){
         done();
       })
       .catch(function(err){
-        return done(err);
+        done(err);
       })
 
   });
@@ -126,7 +125,26 @@ describe('Handle authenticaed POST requests: ', function(){
         done();
       })
       .catch(function(err){
-        return done(err);
+        done(err);
+      })
+
+  });
+
+  it('should fail without a session key', function(done){
+
+    var lastfmNoSession = new LastFMApi(config);
+    var trackInfo = {
+      track : 'Roygbiv',
+      artist : 'Boards of Canada'
+    };
+
+    lastfmNoSession.post('track.updateNowPlaying', trackInfo)
+      .then(function(res){
+        done();
+      })
+      .catch(function(err){
+        expect(err).to.equal('missing session key');
+        done();
       })
 
   });

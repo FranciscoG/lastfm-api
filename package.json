@@ -26,7 +26,7 @@
   },
   "scripts": {
     "test": "mocha --delay",
-    "watch": "mocha -w --delay",
+    "start": "mocha -w --delay",
     "doc": "jsdoc lib -r -d ./docs -t ./node_modules/docdash"
   },
   "dependencies": {
