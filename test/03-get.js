@@ -1,6 +1,5 @@
 const chai = require('chai');
 const expect = chai.expect;
-const should = chai.should;
 const LastFMApi = require('../lib');
 const config = require('./config.js');
 
@@ -21,9 +20,9 @@ describe('Handle GET requests: ', function(){
   it('track.getTopTags', function(done){
 
     var trackInfo = {
-      track : 'Roygbiv',
+      track : 'roygbiv',
       artist : 'Boards of Canada',
-      autocorrect: 1  // optional
+      autocorrect: 1
     };
 
     lastfm.get('track.getTopTags', trackInfo)
@@ -32,7 +31,8 @@ describe('Handle GET requests: ', function(){
         done();
       })
       .catch(function(err){
-        done(err);
+        expect(err).to.be.undefined;
+        done();
       })
 
   });
@@ -49,7 +49,8 @@ describe('Handle GET requests: ', function(){
         done();
       })
       .catch(function(err){
-        done(err);
+        expect(err).to.be.undefined;
+        done();
       })
 
   });
@@ -64,7 +65,8 @@ describe('Handle GET requests: ', function(){
         done();
       })
       .catch(function(err){
-        done(err);
+        expect(err).to.be.undefined;
+        done();
       })
 
   });
@@ -82,7 +84,8 @@ describe('Handle GET requests: ', function(){
         done();
       })
       .catch(function(err){
-        done(err);
+        expect(err).to.be.undefined;
+        done();
       })
 
   });
@@ -99,7 +102,8 @@ describe('Handle GET requests: ', function(){
         done();
       })
       .catch(function(err){
-        done(err);
+        expect(err).to.be.undefined;
+        done();
       })
 
   });
@@ -116,7 +120,8 @@ describe('Handle GET requests: ', function(){
         done();
       })
       .catch(function(err){
-        done(err);
+        expect(err).to.be.undefined;
+        done();
       })
 
   });
